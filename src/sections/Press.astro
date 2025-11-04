@@ -1,0 +1,51 @@
+---
+import Reveal from '../components/Reveal.astro';
+import { posts } from '../data/posts';
+---
+
+<section id="press" class="relative py-24">
+	<div class="max-w-7xl mx-auto px-4">
+		<Reveal class="max-w-3xl">
+			<h2 class="text-3xl md:text-4xl font-semibold text-white">
+				In the press & community
+			</h2>
+			<p class="mt-4 text-lg text-slate-300/85 leading-relaxed">
+				Highlights from media coverage, public build notes, and community
+				contributions.
+			</p>
+		</Reveal>
+		<div class="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+			{
+				posts.map((post, index) => (
+					<Reveal
+						class="glass p-8 h-full flex flex-col justify-between"
+						delay={index * 120}
+					>
+						<div class="space-y-4">
+							<p class="text-xs uppercase tracking-[0.3em] text-quartz/70">
+								{post.source}
+							</p>
+							<h3 class="text-2xl font-semibold text-white">{post.title}</h3>
+							<p class="text-sm text-slate-300/85 leading-relaxed">
+								{post.excerpt}
+							</p>
+						</div>
+						<div class="mt-6 flex items-center justify-between text-sm">
+							<span class="text-quartz/70 uppercase tracking-[0.28em]">
+								{post.year}
+							</span>
+							<a
+								href={post.href}
+								target="_blank"
+								rel="noreferrer"
+								class="btn btn-sm btn-outline rounded-full border-white/20"
+							>
+								Read more
+							</a>
+						</div>
+					</Reveal>
+				))
+			}
+		</div>
+	</div>
+</section>

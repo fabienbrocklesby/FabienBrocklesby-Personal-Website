@@ -1,0 +1,35 @@
+---
+import Reveal from '../components/Reveal.astro';
+import { testimonials } from '../data/testimonials';
+---
+
+<section id="testimonials" class="relative py-24">
+	<div class="max-w-7xl mx-auto px-4">
+		<Reveal class="max-w-3xl">
+			<h2 class="text-3xl md:text-4xl font-semibold text-white">
+				What collaborators say
+			</h2>
+			<p class="mt-4 text-lg text-slate-300/85 leading-relaxed">
+				Trusted by founders, makers, and fabrication teams shipping
+				mission-critical experiences.
+			</p>
+		</Reveal>
+		<div class="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+			{
+				testimonials.map((testimonial, index) => (
+					<Reveal class="glass p-8 flex flex-col gap-6" delay={index * 140}>
+						<p class="text-base text-slate-200/90 leading-relaxed">
+							“{testimonial.quote}”
+						</p>
+						<div class="space-y-1 text-sm uppercase tracking-[0.3em] text-quartz/70">
+							<p>{testimonial.name}</p>
+							<p class="text-slate-500/80 normal-case tracking-normal font-medium">
+								{testimonial.role}
+							</p>
+						</div>
+					</Reveal>
+				))
+			}
+		</div>
+	</div>
+</section>

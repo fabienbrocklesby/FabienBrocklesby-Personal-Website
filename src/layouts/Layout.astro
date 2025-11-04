@@ -1,0 +1,92 @@
+---
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import { SITE, KEYWORDS } from '../config/site';
+import '../styles/global.css';
+
+interface ImageMeta {
+	src: string;
+	alt?: string;
+}
+
+interface LayoutProps {
+	title?: string;
+	description?: string;
+	image?: string | ImageMeta;
+	canonical?: string;
+	structuredData?: Record<string, unknown>;
+	noindex?: boolean;
+}
+
+const {
+	title = SITE.title,
+	description = SITE.description,
+	image = SITE.image,
+	canonical,
+	structuredData,
+	noindex = false,
+} = Astro.props as LayoutProps;
+
+const url = new URL(canonical ?? Astro.url.pathname, SITE.url).toString();
+const imageSrc = typeof image === 'string' ? image : image.src;
+const imageAlt =
+	typeof image === 'string' ? SITE.image.alt : (image.alt ?? SITE.image.alt);
+const robots = noindex ? 'noindex, nofollow' : 'index, follow';
+const jsonLd = structuredData ? JSON.stringify(structuredData) : undefined;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content={KEYWORDS.join(', ')} />
+		<meta name="robots" content={robots} />
+		<link rel="canonical" href={url} />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={url} />
+		<meta property="og:image" content={imageSrc} />
+		<meta property="og:image:alt" content={imageAlt} />
+		<meta property="og:site_name" content={SITE.name} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={imageSrc} />
+		<meta name="theme-color" content="#05060b" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		{jsonLd && <script type="application/ld+json" set:html={jsonLd} />}
+	</head>
+	<body class="relative bg-night text-slate-100" id="top">
+		<a
+			href="#main"
+			class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 btn btn-sm btn-secondary"
+		>
+			Skip to content
+		</a>
+		<div
+			aria-hidden="true"
+			class="fixed inset-x-0 top-[-20%] h-240 -z-10 blur-3xl opacity-60"
+		>
+			<div class="absolute inset-0 bg-mesh"></div>
+			<div
+				class="absolute left-1/2 top-1/4 h-96 w-96 -translate-x-1/2 rounded-full bg-primary/40 mix-blend-screen animate-pulseGlow"
+			>
+			</div>
+			<div
+				class="absolute right-[15%] top-1/2 h-112 aspect-square rounded-full bg-accent/40 blur-3xl animate-float"
+			>
+			</div>
+		</div>
+		<Navigation />
+		<main id="main" class="relative">
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>

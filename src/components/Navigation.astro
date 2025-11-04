@@ -1,0 +1,96 @@
+---
+import { SITE } from '../config/site';
+
+const links = [
+	{ href: '#about', label: 'About' },
+	{ href: '#timeline', label: 'Timeline' },
+	{ href: '#light-lane', label: 'Light Lane' },
+	{ href: '#services', label: 'Services' },
+	{ href: '#press', label: 'Press' },
+	{ href: '#contact', label: 'Contact' },
+];
+---
+
+<header
+	class="sticky top-0 z-50 backdrop-blur-xl bg-base-100/80 border-b border-white/5"
+>
+	<nav class="navbar max-w-7xl mx-auto px-4">
+		<div class="navbar-start">
+			<div class="dropdown">
+				<label
+					tabindex="0"
+					class="btn btn-ghost lg:hidden"
+					aria-label="Open navigation menu"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="h-5 w-5"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="1.5"
+							d="M4 6h16M4 12h16M4 18h16"></path>
+					</svg>
+				</label>
+				<ul
+					tabindex="0"
+					class="menu menu-sm dropdown-content mt-3 z-40 p-4 shadow-lg bg-base-100/95 rounded-box w-64 gap-2"
+				>
+					{
+						links.map(({ href, label }) => (
+							<li>
+								<a href={href} class="font-medium">
+									{label}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+			<a href="#top" class="btn btn-ghost text-lg font-semibold tracking-tight">
+				{SITE.name}
+			</a>
+		</div>
+		<div class="navbar-center hidden lg:flex">
+			<ul class="menu menu-horizontal px-1 gap-2">
+				{
+					links.map(({ href, label }) => (
+						<li>
+							<a
+								href={href}
+								class="font-medium text-sm uppercase tracking-[0.18em] opacity-80 hover:opacity-100 transition"
+							>
+								{label}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+		<div class="navbar-end gap-3">
+			<div class="hidden md:flex gap-3 text-sm opacity-80">
+				<a
+					href={SITE.social.linkedin}
+					target="_blank"
+					rel="noreferrer"
+					aria-label="LinkedIn"
+					class="hover:opacity-100 transition">LinkedIn</a
+				>
+				<a
+					href={SITE.social.github}
+					target="_blank"
+					rel="noreferrer"
+					aria-label="GitHub"
+					class="hover:opacity-100 transition">GitHub</a
+				>
+			</div>
+			<a href="#contact" class="btn btn-primary btn-sm rounded-full shadow-glow"
+				>Book a call</a
+			>
+		</div>
+	</nav>
+</header>

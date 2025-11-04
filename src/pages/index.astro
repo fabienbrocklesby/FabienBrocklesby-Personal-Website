@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../sections/Hero.astro';
+import Timeline from '../sections/Timeline.astro';
+import LightLane from '../sections/LightLane.astro';
+import Services from '../sections/Services.astro';
+import Press from '../sections/Press.astro';
+import Contact from '../sections/Contact.astro';
+import { SITE } from '../config/site';
+
+const structuredData = {
+	'@context': 'https://schema.org',
+	'@type': 'Person',
+	name: SITE.name,
+	jobTitle: 'Founder & Full-Stack Engineer',
+	url: SITE.url,
+	worksFor: {
+		'@type': 'Organization',
+		name: 'Light Lane',
+		url: `${SITE.url}#light-lane`,
+	},
+	sameAs: [SITE.social.linkedin, SITE.social.github, SITE.social.instagram],
+	brand: {
+		'@type': 'Brand',
+		name: 'Light Lane',
+		slogan: 'Creative automation for laser, CNC, and 3D printing teams.',
+		url: `${SITE.url}#light-lane`,
+	},
+	contactPoint: {
+		'@type': 'ContactPoint',
+		contactType: 'Business',
+		email: SITE.contact.email,
+		telephone: SITE.contact.phone,
+		areaServed: 'Global',
+	},
+	alumniOf: {
+		'@type': 'Organization',
+		name: 'Waimea College',
+		sameAs: 'https://www.waimea.school.nz/',
+	},
+};
+---
+
+<Layout structuredData={structuredData}>
+	<Hero />
+	<Timeline />
+	<LightLane />
+	<Services />
+	<Press />
+	<Contact />
+</Layout>

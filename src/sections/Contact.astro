@@ -1,0 +1,102 @@
+---
+import Reveal from '../components/Reveal.astro';
+import { SITE } from '../config/site';
+---
+
+<section id="contact" class="relative py-24">
+	<div class="max-w-5xl mx-auto px-4">
+		<Reveal class="glass p-10 md:p-12 space-y-8">
+			<div class="space-y-4">
+				<span
+					class="badge badge-secondary badge-outline text-xs tracking-[0.28em] uppercase"
+					>Let’s build</span
+				>
+				<h2 class="text-3xl md:text-4xl font-semibold text-white">
+					Tell me about your next launch
+				</h2>
+				<p class="text-lg text-slate-300/85 leading-relaxed">
+					I’m not chasing partnerships right now, but I am open to freelance
+					engagements and launch support for teams who want to move fast. Bring
+					your context—let’s map the milestones and deliverables together.
+				</p>
+			</div>
+			<div class="grid gap-6 md:grid-cols-3">
+				<div class="space-y-2">
+					<p class="text-xs uppercase tracking-[0.3em] text-quartz/70">Email</p>
+					<a
+						href={`mailto:${SITE.contact.email}`}
+						class="text-lg text-white hover:text-primary transition"
+						>{SITE.contact.email}</a
+					>
+				</div>
+				<div class="space-y-2">
+					<p class="text-xs uppercase tracking-[0.3em] text-quartz/70">Phone</p>
+					<a
+						href={`tel:${SITE.contact.phone.replace(/[^+\d]/g, '')}`}
+						class="text-lg text-white/90 hover:text-primary transition"
+						>{SITE.contact.phone}</a
+					>
+				</div>
+				<div class="space-y-2">
+					<p class="text-xs uppercase tracking-[0.3em] text-quartz/70">
+						Location
+					</p>
+					<p class="text-lg text-white/90">{SITE.contact.location}</p>
+				</div>
+			</div>
+			<form class="space-y-6" name="contact" data-netlify="true">
+				<input type="hidden" name="form-name" value="contact" />
+				<label class="form-control w-full">
+					<span
+						class="label-text text-sm uppercase tracking-[0.28em] text-quartz/70"
+						>Name</span
+					>
+					<input
+						type="text"
+						name="name"
+						required
+						class="input input-bordered bg-base-100/60 border-white/20"
+						placeholder="Your name"
+					/>
+				</label>
+				<label class="form-control w-full">
+					<span
+						class="label-text text-sm uppercase tracking-[0.28em] text-quartz/70"
+						>Email</span
+					>
+					<input
+						type="email"
+						name="email"
+						required
+						class="input input-bordered bg-base-100/60 border-white/20"
+						placeholder="you@example.com"
+					/>
+				</label>
+				<label class="form-control w-full">
+					<span
+						class="label-text text-sm uppercase tracking-[0.28em] text-quartz/70"
+						>Project details</span
+					>
+					<textarea
+						name="message"
+						rows="5"
+						required
+						class="textarea textarea-bordered bg-base-100/60 border-white/20"
+						placeholder="What are you building?"></textarea>
+				</label>
+				<div
+					class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
+				>
+					<button
+						type="submit"
+						class="btn btn-primary rounded-full w-full sm:w-auto">Submit</button
+					>
+					<p class="text-xs text-slate-500/80 text-center sm:text-left">
+						Prefer a direct reply? Email me with project details and
+						timelines—I’ll respond within one business day.
+					</p>
+				</div>
+			</form>
+		</Reveal>
+	</div>
+</section>

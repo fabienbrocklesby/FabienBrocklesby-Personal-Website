@@ -1,0 +1,141 @@
+---
+import Reveal from '../components/Reveal.astro';
+---
+
+<section id="light-lane" class="relative py-24">
+	<div
+		class="max-w-7xl mx-auto px-4 grid gap-16 lg:grid-cols-[1.2fr_0.8fr] items-start"
+	>
+		<Reveal class="space-y-6">
+			<span
+				class="badge badge-primary badge-outline text-xs tracking-[0.28em] uppercase"
+				>Light Lane</span
+			>
+			<h2 class="text-3xl md:text-4xl font-semibold text-white">
+				Lightning-fast engraving software purpose-built for makers
+			</h2>
+			<p class="text-lg text-slate-200/85 leading-relaxed">
+				Light Lane compresses everything from SVG import to engrave-ready
+				streaming into a five-step, offline-first workflow. Every release ships
+				with the same goal: fewer clicks, smarter defaults, and confidence
+				before a single pulse fires.
+			</p>
+			<div class="grid gap-6 md:grid-cols-2">
+				<div class="glass p-6 space-y-3">
+					<h3 class="text-xl font-semibold text-white">Core flow</h3>
+					<ul class="space-y-2 text-sm text-slate-300/90 leading-relaxed">
+						<li>
+							• Intelligent import normalises layers, fonts, and vectors
+							instantly.
+						</li>
+						<li>
+							• GPU preview highlights pass order, collisions, and wasted
+							travel.
+						</li>
+						<li>
+							• Material guardrails auto-tune power & speed to stay
+							production-safe.
+						</li>
+					</ul>
+				</div>
+				<div class="glass p-6 space-y-3">
+					<h3 class="text-xl font-semibold text-white">What makers love</h3>
+					<ul class="space-y-2 text-sm text-slate-300/90 leading-relaxed">
+						<li>
+							• Driverless streaming to supported Ruida, GRBL, and G-code
+							controllers.
+						</li>
+						<li>
+							• Path optimiser merges travel to shave minutes off production
+							runs.
+						</li>
+						<li>
+							• Offline activation keeps shop-floor machines air-gapped but in
+							sync.
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="grid gap-4 md:grid-cols-3">
+				<Reveal class="glass p-6" delay={80}>
+					<p class="text-xs uppercase tracking-[0.3em] text-quartz/70">
+						Reusable templates
+					</p>
+					<p class="mt-3 text-base text-slate-200/90 leading-relaxed">
+						Drop in new artwork and Light Lane repositions, rescales, and
+						restores presets instantly.
+					</p>
+				</Reveal>
+				<Reveal class="glass p-6" delay={160}>
+					<p class="text-xs uppercase tracking-[0.3em] text-quartz/70">
+						Multi-mode processing
+					</p>
+					<p class="mt-3 text-base text-slate-200/90 leading-relaxed">
+						Outline, shape, and raster modes auto-select the cleanest sequencing
+						for detail fidelity.
+					</p>
+				</Reveal>
+				<Reveal class="glass p-6" delay={240}>
+					<p class="text-xs uppercase tracking-[0.3em] text-quartz/70">
+						Cross-platform parity
+					</p>
+					<p class="mt-3 text-base text-slate-200/90 leading-relaxed">
+						Native macOS & Windows builds share templates, materials, and
+						analytics with no extra work.
+					</p>
+				</Reveal>
+			</div>
+		</Reveal>
+		<Reveal class="glass p-8 lg:p-10 space-y-8">
+			<div class="space-y-3">
+				<p class="text-xs uppercase tracking-[0.3em] text-quartz/70">
+					Shop-floor wins
+				</p>
+				<h3 class="text-2xl font-semibold text-white">
+					From hobby bench to production line
+				</h3>
+				<p class="text-sm text-slate-200/85 leading-relaxed">
+					Teams adopt Light Lane when they need predictable throughput: less
+					setup time, cleaner motion paths, and the option to run fully offline
+					without sacrificing analytics or templating.
+				</p>
+			</div>
+			<div class="space-y-4">
+				<p class="text-xs uppercase tracking-[0.3em] text-quartz/70">
+					Highlights
+				</p>
+				<div class="grid gap-3">
+					<span
+						class="badge badge-lg badge-outline border-white/20 text-quartz/80"
+						>Materials database</span
+					>
+					<span
+						class="badge badge-lg badge-outline border-white/20 text-quartz/80"
+						>Device-ready streaming</span
+					>
+					<span
+						class="badge badge-lg badge-outline border-white/20 text-quartz/80"
+						>Template marketplace</span
+					>
+					<span
+						class="badge badge-lg badge-outline border-white/20 text-quartz/80"
+						>Offline activation</span
+					>
+				</div>
+			</div>
+			<div class="flex flex-wrap gap-3">
+				<a
+					href="https://lightlane.app"
+					target="_blank"
+					rel="noreferrer"
+					class="btn btn-secondary btn-wide rounded-full">Visit lightlane.app</a
+				>
+				<a
+					href="#contact"
+					class="btn btn-outline btn-wide rounded-full border-white/20 bg-white/5"
+					>Launch with me</a
+				>
+			</div>
+		</Reveal>
+	</div>
+</section>

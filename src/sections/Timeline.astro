@@ -1,0 +1,63 @@
+---
+import Reveal from '../components/Reveal.astro';
+import { timeline } from '../data/timeline';
+---
+
+<section id="timeline" class="relative py-24">
+	<div class="max-w-7xl mx-auto px-4">
+		<Reveal class="max-w-3xl">
+			<h2 class="text-3xl md:text-4xl font-semibold text-white">
+				A timeline of momentum
+			</h2>
+			<p class="mt-4 text-lg text-slate-300/85 leading-relaxed">
+				From building childhood apps to founding Light Lane, every chapter is
+				focused on giving creative people sharper tools.
+			</p>
+		</Reveal>
+		<div class="relative mt-16">
+			<div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-white/10">
+			</div>
+			<div class="space-y-12">
+				{
+					timeline.map((entry, index) => (
+						<Reveal
+							class="relative flex flex-col md:flex-row gap-8 md:gap-16"
+							delay={index * 120}
+						>
+							<div class="md:w-1/2 md:text-right">
+								<span class="inline-flex items-center gap-2 text-sm uppercase tracking-[0.35em] text-quartz/70">
+									<span aria-hidden="true">⚡</span>
+									{entry.timeframe}
+								</span>
+								<h3 class="mt-4 text-2xl font-semibold text-white">
+									{entry.title}
+								</h3>
+							</div>
+							<div class="md:w-1/2 space-y-4">
+								<p class="text-base text-slate-300/90 leading-relaxed">
+									{entry.headline}
+								</p>
+								<p class="text-sm text-slate-400/85 leading-relaxed">
+									{entry.description}
+								</p>
+								<div class="flex flex-wrap gap-3 text-sm">
+									{entry.links.map((link) => (
+										<a
+											href={link.href}
+											target="_blank"
+											rel="noreferrer"
+											class="btn btn-outline btn-xs rounded-full border-white/20 text-quartz/80 hover:border-primary hover:text-white"
+										>
+											{link.label}
+										</a>
+									))}
+								</div>
+							</div>
+							<div class="absolute left-4 md:left-1/2 top-2 -translate-x-1/2 h-3 w-3 rounded-full bg-primary shadow-glow" />
+						</Reveal>
+					))
+				}
+			</div>
+		</div>
+	</div>
+</section>
