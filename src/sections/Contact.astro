@@ -9,15 +9,15 @@ import { SITE } from '../config/site';
 			<div class="space-y-4">
 				<span
 					class="badge badge-secondary badge-outline text-xs tracking-[0.28em] uppercase"
-					>Let’s build</span
+					>Let's build</span
 				>
 				<h2 class="text-3xl md:text-4xl font-semibold text-white">
 					Tell me about your next launch
 				</h2>
 				<p class="text-lg text-slate-300/85 leading-relaxed">
-					I’m not chasing partnerships right now, but I am open to freelance
+					I'm not chasing partnerships right now, but I am open to freelance
 					engagements and launch support for teams who want to move fast. Bring
-					your context—let’s map the milestones and deliverables together.
+					your context-let's map the milestones and deliverables together.
 				</p>
 			</div>
 			<div class="grid gap-6 md:grid-cols-3">
@@ -44,56 +44,69 @@ import { SITE } from '../config/site';
 					<p class="text-lg text-white/90">{SITE.contact.location}</p>
 				</div>
 			</div>
-			<form class="space-y-6" name="contact" data-netlify="true">
+			<form class="space-y-8" name="contact" data-netlify="true">
 				<input type="hidden" name="form-name" value="contact" />
-				<label class="form-control w-full">
-					<span
-						class="label-text text-sm uppercase tracking-[0.28em] text-quartz/70"
-						>Name</span
+				<div class="grid gap-6 md:grid-cols-2">
+					<div class="space-y-2">
+						<label
+							for="contact-name"
+							class="block text-sm uppercase tracking-[0.28em] text-quartz/70"
+						>
+							Name
+						</label>
+						<input
+							id="contact-name"
+							type="text"
+							name="name"
+							required
+							class="block w-full rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-base text-white/90 placeholder:text-slate-400 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary/70 focus:ring-offset-0 transition"
+							placeholder="Your name"
+						/>
+					</div>
+					<div class="space-y-2">
+						<label
+							for="contact-email"
+							class="block text-sm uppercase tracking-[0.28em] text-quartz/70"
+						>
+							Email
+						</label>
+						<input
+							id="contact-email"
+							type="email"
+							name="email"
+							required
+							class="block w-full rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-base text-white/90 placeholder:text-slate-400 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary/70 focus:ring-offset-0 transition"
+							placeholder="you@example.com"
+						/>
+					</div>
+				</div>
+				<div class="space-y-2">
+					<label
+						for="contact-message"
+						class="block text-sm uppercase tracking-[0.28em] text-quartz/70"
 					>
-					<input
-						type="text"
-						name="name"
-						required
-						class="input input-bordered bg-base-100/60 border-white/20"
-						placeholder="Your name"
-					/>
-				</label>
-				<label class="form-control w-full">
-					<span
-						class="label-text text-sm uppercase tracking-[0.28em] text-quartz/70"
-						>Email</span
-					>
-					<input
-						type="email"
-						name="email"
-						required
-						class="input input-bordered bg-base-100/60 border-white/20"
-						placeholder="you@example.com"
-					/>
-				</label>
-				<label class="form-control w-full">
-					<span
-						class="label-text text-sm uppercase tracking-[0.28em] text-quartz/70"
-						>Project details</span
-					>
+						Project details
+					</label>
 					<textarea
+						id="contact-message"
 						name="message"
-						rows="5"
+						rows="6"
 						required
-						class="textarea textarea-bordered bg-base-100/60 border-white/20"
+						class="block w-full resize-y rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-base text-white/90 placeholder:text-slate-400 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary/70 focus:ring-offset-0 transition"
 						placeholder="What are you building?"></textarea>
-				</label>
+				</div>
 				<div
-					class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
+					class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between"
 				>
 					<button
 						type="submit"
-						class="btn btn-primary rounded-full w-full sm:w-auto">Submit</button
+						class="btn btn-primary rounded-full w-full md:w-auto"
 					>
-					<p class="text-xs text-slate-500/80 text-center sm:text-left">
+						Submit
+					</button>
+					<p class="text-xs text-slate-500/80 text-center md:text-left">
 						Prefer a direct reply? Email me with project details and
-						timelines—I’ll respond within one business day.
+						timelines-I'll respond within one business day.
 					</p>
 				</div>
 			</form>

@@ -13,7 +13,7 @@ export const testimonials = [
 	},
 	{
 		quote:
-			'From CNC integrations to polished front-end experiences, Fabien just figures it out—all while communicating like a seasoned product manager.',
+			'From complex laser integrations to polished front-end experiences, Fabien just figures it out-all while communicating like a seasoned product manager.',
 		name: 'Creative tech collaborator',
 		role: 'Head of product, maker collective',
 	},

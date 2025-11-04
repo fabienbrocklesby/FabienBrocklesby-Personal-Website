@@ -24,16 +24,18 @@ import { timeline } from '../data/timeline';
 							class="relative flex flex-col md:flex-row gap-8 md:gap-16"
 							delay={index * 120}
 						>
-							<div class="md:w-1/2 md:text-right">
+							<div class="md:w-1/2 md:text-right md:pr-12 pl-10 md:pl-0">
 								<span class="inline-flex items-center gap-2 text-sm uppercase tracking-[0.35em] text-quartz/70">
-									<span aria-hidden="true">⚡</span>
+									<span aria-hidden="true" class="hidden md:inline">
+										⚡
+									</span>
 									{entry.timeframe}
 								</span>
 								<h3 class="mt-4 text-2xl font-semibold text-white">
 									{entry.title}
 								</h3>
 							</div>
-							<div class="md:w-1/2 space-y-4">
+							<div class="md:w-1/2 space-y-4 pl-10 md:pl-0">
 								<p class="text-base text-slate-300/90 leading-relaxed">
 									{entry.headline}
 								</p>

@@ -2,7 +2,7 @@ export const SITE = {
 	name: 'Fabien Brocklesby',
 	title: 'Fabien Brocklesby | Founder, Full-Stack Engineer & Light Lane CEO',
 	description:
-		'Fabien Brocklesby is the founder of Light Lane and a freelance full-stack engineer who ships laser engraving, CNC, and launch-ready creative software for ambitious businesses.',
+		'Fabien Brocklesby is the founder of Light Lane and a freelance full-stack engineer who ships laser engraving software today while actively building CNC and 3D printing workflows for ambitious businesses.',
 	url: 'https://fabienbrocklesby.com',
 	image: {
 		src: '/og-image.jpg',

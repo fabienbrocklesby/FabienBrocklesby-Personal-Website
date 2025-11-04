@@ -24,10 +24,10 @@ export const services = [
 	{
 		label: 'Fabrication workflow automation',
 		description:
-			'Custom Light Lane extensions and fabrication tooling that connect operators, devices, and analytics without slowing production.',
+			'Custom Light Lane extensions and fabrication tooling for laser engravers today, with CNC and 3D printing workflow tooling in active R&D.',
 		highlights: [
 			'Laser profile management',
-			'Machine integrations',
+			'Machine integrations roadmap',
 			'Shop-floor analytics',
 		],
 		icon: '🚀',

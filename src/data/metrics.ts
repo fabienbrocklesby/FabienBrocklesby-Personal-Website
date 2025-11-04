@@ -11,15 +11,15 @@ export const metrics = [
 			'Commercial sites, SaaS platforms, automation tools, and community apps.',
 	},
 	{
-		label: 'Team size at Light Lane',
-		value: '5',
+		label: 'Press features',
+		value: '2',
 		detail:
-			'Designers, engineers, and operators pushing creative tooling forward.',
+			'Profiled twice by Nelson App for Light Lane and earlier product launches.',
 	},
 	{
-		label: 'Industries supported',
-		value: '4',
+		label: 'Controllers supported',
+		value: '3',
 		detail:
-			'Laser engraving, CNC, 3D printing, and digital fabrication studios.',
+			'Ruida, GRBL, and G-code laser controllers supported by Light Lane today.',
 	},
 ] as const;
